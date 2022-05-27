@@ -9,12 +9,10 @@ public:
       
       if(num % 2 == 0){
         ++counter;
-        numberOfSteps(num/2);
-        return counter;
+        return numberOfSteps(num/2);;
       }else{
         ++counter;
-        numberOfSteps(num - 1);
-        return counter;
+        return numberOfSteps(num - 1);;
       }
     }
 };
