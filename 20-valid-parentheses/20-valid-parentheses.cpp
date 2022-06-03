@@ -5,21 +5,16 @@ public:
         {'{', '}'}, {'(', ')'}, {'[', ']' },
         {'}', '{'}, {')', '('}, {']', '[' },
       };
-      // std::vector<char> open {'{', '[', '('};
-      
-      unordered_map<char, bool> isOpening{
-        {'}', false},  {')', false},  {']', false},
-        {'{', true}, {'(', true}, {'[', true},
-      };
-      stack<char> st;
+      std::vector<char> open {'{', '[', '('};
+      std::stack<char> st;
       
       for(auto i{0}; i < s.length(); ++i){
         auto rev = m[s[i]];
         
-        if (isOpening[s[i]]) {
+        if (std::find(open.begin(), open.end(), s[i]) != open.end()) {
           st.push(s[i]);
-        }else{
-          if(st.empty() || st.top() != rev){
+        }else {
+            if(st.empty() || st.top() != rev){
             return false;
           }
           st.pop();
