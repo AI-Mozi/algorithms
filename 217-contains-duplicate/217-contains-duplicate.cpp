@@ -1,11 +1,11 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        std::set<int> dupl = {};
+        std::unordered_map<int,bool> dupl = {};
       
-        for(auto x : nums){
-          if(dupl.find(x) != dupl.end()){ return true; }
-          dupl.insert(x);
+        for(const auto num : nums){
+          if(dupl[num] == true) return true;
+          dupl[num] = true;
         }
       return false;
     }
