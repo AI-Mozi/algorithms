@@ -7,7 +7,7 @@ def two_sum(nums, target)
   nums.each_with_index do |n, idx|
     t = target - n
     
-    if hash.include?(t)
+    if hash[t]
       return [idx, hash[t]]
     else
       hash[n] = idx
