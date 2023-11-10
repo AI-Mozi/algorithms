@@ -5,9 +5,12 @@ def top_k_frequent(nums, k)
   return nums if k == nums.size
   
   hash = {}
+  res = []
   nums.each do |n|
     hash[n] = (hash[n] || 0) + 1
   end
   
-  hash.sort_by { |k, v| -v }.to_h.keys.first(k)
+  sorted = hash.sort_by { |k, v| -v }
+  k.times { res << sorted[_1][0] }
+  res
 end
