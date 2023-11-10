@@ -11,8 +11,6 @@ def top_k_frequent(nums, k)
   end
   
   sorted = hash.sort_by { |k, v| -v }
-  for i in 0...k do
-        res.append(sorted[i][0])
-    end
+  k.times { res << sorted[_1][0] }
   res
 end
