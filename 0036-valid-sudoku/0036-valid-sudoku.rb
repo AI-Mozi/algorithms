@@ -20,6 +20,7 @@ def is_valid_sudoku(board)
       
       return false if cols[col_idx].include?(v)
       cols[col_idx] << v
+
       return false if boxes[box_id]&.include?(v)
       boxes[box_id] << v
     end
