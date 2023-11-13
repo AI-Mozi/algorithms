@@ -9,14 +9,10 @@ class MinStack
     :rtype: Void
 =end
     def push(val)
-      if @min_stack.empty?
+      if @min_stack.empty? || val < get_min
         @min_stack << val
       else
-        if val < get_min
-          @min_stack << val
-        else
-          @min_stack << get_min
-        end
+        @min_stack << get_min
       end
 
       @stack << val
