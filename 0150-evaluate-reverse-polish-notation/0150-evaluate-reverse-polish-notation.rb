@@ -10,9 +10,7 @@ def eval_rpn(tokens)
       second = stack.pop
       first = stack.pop
       val = first.to_f.send(t, second.to_f)
-      if t == "/"
-        val = val.to_i
-      end
+      val = val.to_i if t == "/"
       stack << val
     else
       stack << t
