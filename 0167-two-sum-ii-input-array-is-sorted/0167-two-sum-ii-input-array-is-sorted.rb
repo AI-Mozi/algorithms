@@ -6,12 +6,7 @@ def two_sum(numbers, target)
   r = numbers.size - 1
   
   while (numbers[l] + numbers[r] != target)
-    sum = numbers[l] + numbers[r]
-    if sum > target
-      r -= 1
-    else
-      l += 1
-    end
+    numbers[l] + numbers[r] > target ? r -= 1 : l += 1
   end
   
   [l + 1, r + 1]
