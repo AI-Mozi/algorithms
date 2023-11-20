@@ -23,6 +23,5 @@ def is_palindrome(s)
 end
 
 def is_alpha(c)
-  puts "#{c}: #{c.ord}"
   (65..90).include?(c.ord) || (97..122).include?(c.ord) || (48..57).include?(c.ord) 
 end
