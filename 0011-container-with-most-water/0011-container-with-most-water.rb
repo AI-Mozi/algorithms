@@ -8,16 +8,10 @@ def max_area(height)
   while (first < last)
     axis = last - first
     max_h = [height[first], height[last]].min
+    size = axis * max_h
     
-    if max_amount < axis * max_h
-      max_amount = axis * max_h
-    end
-    
-    if height[first] < height[last]
-      first += 1
-    else
-      last -= 1
-    end
+    max_amount = size if max_amount < size
+    height[first] < height[last] ? first += 1 : last -= 1
   end
   
   max_amount
