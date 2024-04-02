@@ -9,14 +9,16 @@
 # @param {ListNode} head
 # @return {ListNode}
 def reverse_list(head)
-  prev, curr = nil, head
-  
-  while curr do
-    n = curr.next
-    curr.next = prev
-    prev = curr
-    curr = n
+  unless head
+    return nil
+  end
+    
+  new_head = head
+  if head.next
+    new_head = reverse_list(head.next)
+    head.next.next = head
   end
   
-  return prev
+  head.next = nil
+  new_head
 end
