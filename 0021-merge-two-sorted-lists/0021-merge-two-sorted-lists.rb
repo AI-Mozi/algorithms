@@ -10,10 +10,6 @@
 # @param {ListNode} list2
 # @return {ListNode}
 def merge_two_lists(list1, list2)
-  return nil if !list2 && !list1
-  return list1 unless list2
-  return list2 unless list1
-  
   node = ListNode.new(nil)
   head = node
 
