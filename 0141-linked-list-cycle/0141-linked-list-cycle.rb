@@ -10,16 +10,14 @@
 # @param {ListNode} head
 # @return {Boolean}
 def hasCycle(head)
-  nums = {}
+  slow_ptr = head
+  fast_ptr = head
   
-  while head
-    return false unless head.next
-      
-    return true if nums[head.next] == 1
+  while fast_ptr && fast_ptr.next
+    slow_ptr = slow_ptr.next
+    fast_ptr = fast_ptr.next.next
     
-    nums[head.next] = 1
-    
-    head = head.next
+    return true if slow_ptr == fast_ptr
   end
   
   false
