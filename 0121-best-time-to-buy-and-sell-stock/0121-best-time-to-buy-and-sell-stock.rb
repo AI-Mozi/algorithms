@@ -8,8 +8,6 @@ def max_profit(prices)
   while sell_day < prices.size
     if prices[buy_day] >= prices[sell_day]
       buy_day = sell_day
-      sell_day += 1
-      next
     end
     
     tmp_max_profit = prices[sell_day] - prices[buy_day]
