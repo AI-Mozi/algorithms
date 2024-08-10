@@ -22,7 +22,7 @@ def add_two_numbers(l1, l2)
       l1.val = sum 
     else
       l1.val = sum % 10
-      to_add += sum / 10
+      to_add += 1
     end
     
     prev = l1
@@ -39,7 +39,7 @@ def add_two_numbers(l1, l2)
       l1.val = sum
     else
       l1.val = sum % 10
-      to_add += sum / 10
+      to_add += 1
     end
     
     prev = l1
@@ -56,7 +56,7 @@ def add_two_numbers(l1, l2)
       l2.val = sum
     else
       l2.val = sum % 10
-      to_add += sum / 10
+      to_add += 1
     end
     
     prev = l2
