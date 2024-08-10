@@ -33,11 +33,7 @@ def remove_nth_from_end(head, n)
     return nil
   end
   
-  if l.next
-    prev.next = l.next
-  else
-    prev.next = nil
-  end
+  prev.next = l.next
   
   head
 end
