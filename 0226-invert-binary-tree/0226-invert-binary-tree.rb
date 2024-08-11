@@ -13,7 +13,7 @@ def invert_tree(root)
   node = root
   
   unless node
-    return node
+    return root
   else
     tmp = node.left
     node.left = node.right
