@@ -16,9 +16,7 @@ end
 
 def find(root, sub_root)
   return false unless root
-  if root&.val == sub_root.val
-    return true if check_nodes(root, sub_root)
-  end
+  return true if root&.val == sub_root.val && check_nodes(root, sub_root) 
     
   l = find(root.left, sub_root)
   r = find(root.right, sub_root)
