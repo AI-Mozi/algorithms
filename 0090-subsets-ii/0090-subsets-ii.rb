@@ -2,14 +2,14 @@
 # @return {Integer[][]}
 def subsets_with_dup(nums)
   res = Set.new
-  subset(res, [], nums) 
+  subset(res, [], nums.sort) 
 
   res.to_a
 end
 
 def subset(res, ans, nums)
   if nums.empty?
-    res.add?(ans.sort)
+    res.add?(ans)
     return
   end
   
